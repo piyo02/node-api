@@ -11,4 +11,13 @@ module.exports = (app) => {
 
     app.route('/student/:id')
         .get(myjson.getStudentById);
+    
+    app.route('/add')
+        .post(myjson.createStudent);
+
+    app.route('/edit/:id')
+        .put(myjson.editStudent);
+
+    app.route('/delete')
+        .delete(myjson.deleteStudent);
 }
