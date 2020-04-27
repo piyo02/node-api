@@ -5,4 +5,10 @@ module.exports = (app) => {
 
     app.route('/')
         .get(myjson.index);
+
+    app.route('/students')
+        .get(myjson.getAllStudents);
+
+    app.route('/student/:id')
+        .get(myjson.getStudentById);
 }
