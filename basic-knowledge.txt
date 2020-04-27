@@ -41,3 +41,5 @@ contoh isi JSON
 
 5. create new file server.js
 6. setting server in server.js
+7. create and make connection database in connection.js
+8. create file res.js and make module res
