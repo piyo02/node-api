@@ -3,29 +3,30 @@
 const response = require('./res');
 const connection = require('./connection');
 
+// function result
+const result = (err, rows, fields, res) => {
+    if(err){
+        connection.log(err);
+    } else {
+        response.ok(rows, res);
+    }
+}
+// variable for query
+let query = "";
+
 exports.index = (req, res) => {
     response.ok("REST API application is running", res);
 }
 
-// menampilkan semua data mahasiswa
+// get all students
 exports.getAllStudents = (req, res) => {
-    connection.query('SELECT * FROM mahasiswa', (err, rows, fields) => {
-        if(err){
-            connection.log(err);
-        } else {
-            response.ok(rows, res);
-        }
-    });
+    query = 'SELECT * FROM mahasiswa';
+    connection.query( query, result(err, rows, fields, res) );
 }
 
 // get student by id
 exports.getStudentById = (req, res) => {
     let id = req.params.id;
-    connection.query(`SELECT * FROM mahasiswa WHERE id = ${id}`, (err, rows, fields) => {
-        if(err){
-            connection.log(err);
-        } else {
-            response.ok(rows, res);
-        }
-    });
+    query = `SELECT * FROM mahasiswa WHERE id = ${id}`;
+    connection.query(query, result(err, rows, fields, res));
 }
