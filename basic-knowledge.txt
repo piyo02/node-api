@@ -28,3 +28,16 @@ contoh isi JSON
 
 ###################################################################
 
+1. create new folder project
+2. npm init the folder
+3. push to github repository (optional, if you doing this, add url repository git when your init npm)
+4. install express, mysql, body parser with nodejs
+
+
+###################################################################
+express js
+web framework yang digunakan untuk membuat application berbasis nodejs
+
+body parser
+berguna untuk parsing file JSON
+###################################################################
