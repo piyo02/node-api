@@ -1,0 +1,30 @@
+REST API
+REST => REpresentational State Transfer
+
+arsitekur REST API dijalankan menggunakan konsep HTTP
+
+sebuah file JSON akan memuat konten yang akan disajikan pada sebuah web/application
+GET, POST, PUT ,DELETE
+
+Data di dalam database diubah menjadi file JSON untuk mendapatkan data tersebut
+
+###################################################################
+
+contoh isi JSON
+[
+    {
+        "first_name": "Al Zidni",
+        "last_name": " Kasim",
+        "age": "20",
+        "gender": "man",
+    },
+    {
+        "first_name": "Alwan",
+        "last_name": " Kasim",
+        "age": "7",
+        "gender": "man",
+    },
+]
+
+###################################################################
+
