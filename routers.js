@@ -20,4 +20,7 @@ module.exports = (app) => {
 
     app.route('/delete')
         .delete(myjson.deleteStudent);
+
+    app.route('/scheduleOfStudents')
+        .get(myjson.getAllStudentsSchedule)
 }

@@ -82,3 +82,23 @@ exports.deleteStudent = (req, res) => {
         }
     });
 }
+
+exports.getAllStudentsSchedule = (req, res) => {
+    query = `SELECT mahasiswa.id, 
+                    mahasiswa.nim, 
+                    mahasiswa.nama, 
+                    mahasiswa.jurusan, 
+                    courses.name AS course_name, 
+                    courses.time, schedule.date 
+            FROM schedule
+            INNER JOIN mahasiswa ON mahasiswa.id = schedule.mahasiswa_id
+            INNER JOIN courses ON courses.id = schedule.course_id
+            ORDER BY mahasiswa.id`;
+    connection.query( query, (err, rows, fields) => {
+        if(err){
+            console.log(err);
+        } else {
+            response.nestedJoin(rows, res);
+        }
+    });
+}
