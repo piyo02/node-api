@@ -84,3 +84,8 @@ exports.login = (req, res) => {
         }
     })
 }
+
+// new page with role 2
+exports.page = (req, res) => {
+    response.ok('This page just for user with role is 2!', res);
+}
